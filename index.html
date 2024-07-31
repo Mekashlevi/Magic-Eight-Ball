@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Levi Mekash">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Eight Ball</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+ 
+<!-- Compose a series of eight (8) responses that a fortune teller might answer to someone asking yes or no questions.  (Or let your own creative impulses be your guide as to the answers you make.)
+      - 8 ball "fortune teller" responses in an array
+
+Prompt the player for their question.
+      - Add text box to enter question
+      - Add button to generate random response from array
+
+Use a randomizer to select one answer per question to display to the asker.
+      - generate a random answer
+      - display random answer(s) per question
+
+Repeat until the user chooses to stop. 
+      - button to stop game 
+      - disable input and buttons when game is stopped -->
+
+  <body>
+    <h1>Magic Eight Ball</h1>
+    <p>Ask a yes or no question and shake the Magic Eight Ball to reveal your fortune!</p>
+    <input type="text" id="question" placeholder="Type your question here">
+    <button id="shakeButton">Shake</button>
+    <button id="stopButton">Stop</button>
+    <p id="answer"></p>
+
+    <script>
+        // Prompt the player for their question
+        alert("Welcome to the Magic Eight Ball! Ask a yes or no question and shake the ball to reveal your fortune!")
+
+        // 8 ball "fortune teller" responses in an array
+        const responses = [
+            "Yes, definitely!",
+            "No, not at all.",
+            "Ask again later.",
+            "Cannot predict now.",
+            "It is certain.",
+            "Don't count on it.",
+            "Yes, in due time.",
+            "My sources say no."  ];
+      
+        // Add button to generate random response from array
+        document.getElementById('shakeButton').addEventListener('click', function() {
+          
+        // Get the user's question
+        let question = document.getElementById('question').value;
+
+        // Check if the question is empty
+        if (question.trim() === "") {
+            alert("Please ask a question.");
+            return;  }
+
+        // Generate a random response
+        let randomIndex = Math.floor(Math.random() * responses.length);
+
+        // Generate the random answer
+        let answer = responses[randomIndex];
+
+        // Display random answer(s) per question
+        document.getElementById('answer').innerText = answer;
+        });;      
+
+        // Repeat until the user chooses to stop
+        document.getElementById('stopButton').addEventListener('click', function() {
+        document.getElementById('answer').innerText = "The Magic Eight Ball rests. Farewell!";
+
+        // Disable input and buttons when game is stopped
+        document.getElementById('question').disabled = true;
+        document.getElementById('shakeButton').disabled = true;
+        document.getElementById('stopButton').disabled = true;
+        });  
+    </script>
+  </body>
+</html>

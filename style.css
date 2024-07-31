@@ -1,0 +1,55 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(purple, blue);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+}
+
+h1 {
+  color: whitesmoke;
+  margin-top: 50px;
+  font-size: 3em;
+}
+
+p {
+  font-size: 18px;
+  color: whitesmoke;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  margin: 20px 0;
+  border: 2px blueviolet solid;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: darkgoldenrod;
+}
+
+#answer {
+  font-size: 20px;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-top: 30px;
+}
